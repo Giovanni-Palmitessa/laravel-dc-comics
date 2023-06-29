@@ -17,4 +17,4 @@ use App\Http\Controllers\Guest\PageController;
 
 Route::get('/', [PageController::class, 'homepage'])->name('homepage');
 
-Route::get('/comics', [ComicController::class, 'comics'])->name('comics');
+Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
