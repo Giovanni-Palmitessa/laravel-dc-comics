@@ -2,6 +2,8 @@
 
 @section('contents')
     <div class="card-container">
+      <a href="{{route('comics.create')}}">Inserisci Nuovo fumetto</a>
+
         @foreach ($comics as $comic)
         <div class="card">
             <img src="{{$comic->thumb}}" class="card-img-top" alt="{{$comic->title}}">
