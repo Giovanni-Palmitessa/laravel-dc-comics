@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('price', 20);
             $table->string('series', 40);
             $table->char('sale_date', 10);
+            $table->string('type', 20);
             $table->timestamps();
         });
     }
