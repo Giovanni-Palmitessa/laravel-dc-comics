@@ -14,7 +14,7 @@
             </ul>
             <div class="card-body">
               <a href="{{ route('comics.show', ['comic' => $comic->id]) }}" class="card-link">Informazioni</a>
-              <a href="#" class="card-link">Aggiungi</a>
+              <a href="#" class="card-link">Modifica</a>
             </div>
         </div>
         @endforeach
