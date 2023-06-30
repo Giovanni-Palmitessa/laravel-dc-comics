@@ -96,7 +96,16 @@
 
         <div class="mb-3">
             <label for="tipo" class="form-label">Tipo</label>
-            <input type="text" class="form-control" id="tipo" placeholder="Inserisci tipo" name="type">
+            <input type="text" 
+                   class="form-control" 
+                   id="tipo" 
+                   placeholder="Inserisci tipo" 
+                   name="type"
+                   value="{{ old('type') }}"
+                >
+            <div class="invalid-feedback">
+                @error('type') {{ $message }} @enderror
+            </div>    
         </div>
 
         <button class="btn btn-primary">Salva</button>
