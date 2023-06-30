@@ -3,6 +3,7 @@
 @section('contents')
     <form method="POST" action="{{route('comics.store')}}">
         @csrf
+
         <div class="mb-3">
             <label for="titolo" class="form-label">Titolo</label>
             <input type="text" 
@@ -10,15 +11,25 @@
                    id="titolo" 
                    placeholder="Inserisci titolo" 
                    name="title"
-                   value="{{ old('title') }}">
-        </div>
-        <div class="invalid-feedback">
-            @error('title') {{ $message }} @enderror
+                   value="{{ old('title') }}"
+                >
+            <div class="invalid-feedback">
+                @error('title') {{ $message }} @enderror
+            </div>
         </div>
 
         <div class="mb-3">
             <label for="descrizione" class="form-label">Descrizione</label>
-            <input type="text" class="form-control " id="descrizione" placeholder="Inserisci descrizione" name="description">
+            <input type="text" 
+                   class="form-control @error('description') is-invalid @enderror" 
+                   id="descrizione" 
+                   placeholder="Inserisci descrizione" 
+                   name="description"
+                   value="{{ old('description') }}"
+                >
+            <div class="invalid-feedback">
+                 @error('description') {{ $message }} @enderror
+            </div>
         </div>
         <div class="mb-3">
             <label for="url-image" class="form-label">URL Immagine</label>
