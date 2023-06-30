@@ -84,7 +84,7 @@
             <input type="text" 
                    class="form-control @error('sale_date') is-invalid @enderror" 
                    id="data-di-vendita" 
-                   placeholder="Inserisci data di vendita" 
+                   placeholder="Inserisci data di vendita nel formato 'YYYY-MM-DD'" 
                    name="sale_date"
                    value="{{ old('sale_date') }}"
                 >
