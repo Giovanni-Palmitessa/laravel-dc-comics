@@ -66,12 +66,34 @@
 
         <div class="mb-3">
             <label for="series" class="form-label">Serie</label>
-            <input type="text" class="form-control" id="series" placeholder="Inserisci Serie" name="series">
+            <input type="text" 
+                   class="form-control @error('series') is-invalid @enderror" 
+                   id="series" 
+                   placeholder="Inserisci Serie" 
+                   name="series"
+                   value="{{ old('series') }}"
+                >
+            <div class="invalid-feedback">
+                @error('series') {{ $message }} @enderror
+            </div>
         </div>
+
+
         <div class="mb-3">
             <label for="data-di-vendita" class="form-label">Data di vendita</label>
-            <input type="text" class="form-control" id="data-di-vendita" placeholder="Inserisci data di vendita" name="sale_date">
+            <input type="text" 
+                   class="form-control @error('sale_date') is-invalid @enderror" 
+                   id="data-di-vendita" 
+                   placeholder="Inserisci data di vendita" 
+                   name="sale_date"
+                   value="{{ old('sale_date') }}"
+                >
+            <div class="invalid-feedback">
+                @error('sale_date') {{ $message }} @enderror
+            </div>
         </div>
+
+
         <div class="mb-3">
             <label for="tipo" class="form-label">Tipo</label>
             <input type="text" class="form-control" id="tipo" placeholder="Inserisci tipo" name="type">
