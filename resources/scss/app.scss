@@ -1,11 +1,185 @@
 @import "~bootstrap/scss/bootstrap";
 
+@import "~bootstrap/scss/bootstrap";
+
+
+// STILE GENERALE
+
+
 body {
-    background-image: url("../img/picsum16.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    font-family: sans-serif;
+}
+  
+ul {
+    list-style: none;
+    padding-inline-start: 0px;
 }
 
-h1 {
-    color: red;
+a {
+    text-decoration: none;
 }
+
+.container {
+    max-width: 1300px;
+    margin-inline: auto;
+}
+
+// HEADER 
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+    .logo {
+    display: flex;
+}
+  .choose ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    li {
+        font-size: 1.3rem;
+        font-weight: 700;
+      &:hover {
+        cursor: pointer;
+        color: #0282f9;
+      }
+    }
+  }
+
+  main {
+    background-color: black;
+    padding-bottom: 1rem;
+    .jumbotron {
+      height: 60vh;
+      width: 100vw;
+      background-image: url(../img/jumbotron.jpg);
+      background-size: cover;
+    }
+  }
+  
+  .comics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+  
+  .learn-more {
+    display: flex;
+    justify-content: center;
+    .button {
+      font-weight: 600;
+      background-color: #0282f9;
+      padding: 0.5rem 2rem;
+      color: white;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+
+  .card {
+    width: calc((100% - 5rem) / 6);
+    background-color: lightslategray;
+  
+    h6 {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+.top-footer {
+    padding: 2rem 1rem;
+    background-color: #0282f9;
+    color: white;
+    font-size: 10px;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .link img {
+    width: 50px;
+  }
+
+  .bottom-footer {
+    background-image: url(../img/footer-bg.jpg);
+    background-size: cover;
+    padding: 1.5rem;
+    position: relative;
+    height: 70vh;
+  }
+  
+  .option {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .ul-option {
+    display: flex;
+    gap: 3rem;
+  }
+  
+  .ul-sub-option {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .sub-option {
+    color: gray;
+    font-size: 0.9rem;
+  }
+
+  .big-logo img {
+    position: absolute;
+    top: -60px;
+    right: 0;
+  }
+  
+  .additional-footer {
+    padding: 1.5rem;
+    background-color: #303030;
+  }
+  
+  .sign-up {
+    color: white;
+  }
+  .additional-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .follow {
+    color: #0282f9;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }

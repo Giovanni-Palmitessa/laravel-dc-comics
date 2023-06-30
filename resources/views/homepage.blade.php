@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
-        @vite('resources/js/app.js')
-    </head>
-    <body>
-        <h1 class="text-center">Fumetti Dc Comics</h1>
-        {{-- <img src="{{ Vite::asset('resources/img/picsum30.jpg') }}" alt=""> --}}
-    </body>
-</html>
+@extends('layouts.base')
+
+@section('contents')
+<div class="home-button d-flex justify-content-center">
+    <button type="button" class="btn btn-danger"><a href="/comics" class="text-center text-warning">Clicca qui per scoprire i Fumetti!</a></button>
+</div>
+
+@endsection
