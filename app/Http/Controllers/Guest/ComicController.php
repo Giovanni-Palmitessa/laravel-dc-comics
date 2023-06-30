@@ -42,6 +42,9 @@ class ComicController extends Controller
 
         $newComic = new Comic();
         $newComic->title = $data['title'];
+        $newComic->description = $data['description'];
+        $newComic->thumb = $data['thumb'];
+        $newComic->price = $data['price'];
 
         $newComic->save();
     }
