@@ -2,13 +2,10 @@
 
 @section('contents')
     <div class="card-container">
-      <a href="{{route('comics.create')}}">Inserisci Nuovo fumetto</a>
-
-        
-
         <div class="jumbotron"></div>
             <div class="container">
               <div class="main-content">
+                <button type="button" class="btn btn-danger mt-4"><a href="{{route('comics.create')}}" class="text-center text-warning">Inserisci Nuovo fumetto</a></button>
                 <div class="comics mb-3">
                   @foreach ($comics as $comic)
                   <div class="card">
