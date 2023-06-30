@@ -47,10 +47,23 @@
                 @error('thumb') {{ $message }} @enderror
             </div>
         </div>
+
+
         <div class="mb-3">
             <label for="prezzo" class="form-label">Prezzo</label>
-            <input type="text" class="form-control" id="prezzo" placeholder="Inserisci prezzo"name="price">
+            <input type="text" 
+                   class="form-control @error('price') is-invalid @enderror" 
+                   id="prezzo" 
+                   placeholder="Inserisci prezzo"
+                   name="price"
+                   value="{{ old('price') }}"
+                >
+            <div class="invalid-feedback">
+                @error('price') {{ $message }} @enderror
+            </div>
         </div>
+
+
         <div class="mb-3">
             <label for="series" class="form-label">Serie</label>
             <input type="text" class="form-control" id="series" placeholder="Inserisci Serie" name="series">
