@@ -1,11 +1,12 @@
 @extends('layouts.base')
 
 @section('contents')
+<div class="container">
     <form method="POST" action="{{route('comics.store')}}">
         @csrf
 
         <div class="mb-3">
-            <label for="titolo" class="form-label">Titolo</label>
+            <label for="titolo" class="form-label text-white py-2">Titolo</label>
             <input type="text" 
                    class="form-control @error('title') is-invalid @enderror" 
                    id="titolo" 
@@ -20,7 +21,7 @@
 
 
         <div class="mb-3">
-            <label for="descrizione" class="form-label">Descrizione</label>
+            <label for="descrizione" class="form-label text-white">Descrizione</label>
             <input type="text" 
                    class="form-control @error('description') is-invalid @enderror" 
                    id="descrizione" 
@@ -35,7 +36,7 @@
 
 
         <div class="mb-3">
-            <label for="url-image" class="form-label">URL Immagine</label>
+            <label for="url-image" class="form-label text-white">URL Immagine</label>
             <input type="text" 
                    class="form-control @error('thumb') is-invalid @enderror" 
                    id="url-image" 
@@ -50,7 +51,7 @@
 
 
         <div class="mb-3">
-            <label for="prezzo" class="form-label">Prezzo</label>
+            <label for="prezzo" class="form-label text-white">Prezzo</label>
             <input type="text" 
                    class="form-control @error('price') is-invalid @enderror" 
                    id="prezzo" 
@@ -65,7 +66,7 @@
 
 
         <div class="mb-3">
-            <label for="series" class="form-label">Serie</label>
+            <label for="series" class="form-label text-white">Serie</label>
             <input type="text" 
                    class="form-control @error('series') is-invalid @enderror" 
                    id="series" 
@@ -80,7 +81,7 @@
 
 
         <div class="mb-3">
-            <label for="data-di-vendita" class="form-label">Data di vendita</label>
+            <label for="data-di-vendita" class="form-label text-white">Data di vendita</label>
             <input type="text" 
                    class="form-control @error('sale_date') is-invalid @enderror" 
                    id="data-di-vendita" 
@@ -95,7 +96,7 @@
 
 
         <div class="mb-3">
-            <label for="tipo" class="form-label">Tipo</label>
+            <label for="tipo" class="form-label text-white">Tipo</label>
             <input type="text" 
                    class="form-control  @error('type') is-invalid @enderror" 
                    id="tipo" 
@@ -110,4 +111,5 @@
 
         <button class="btn btn-primary">Salva</button>
     </form>
+</div>
 @endsection
