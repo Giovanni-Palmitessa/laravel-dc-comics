@@ -2,6 +2,7 @@
 
 @section('contents')
     <form method="POST" action="{{route('comics.store')}}">
+        @csrf
         <div class="mb-3">
             <label for="titolo" class="form-label">Titolo</label>
             <input type="text" class="form-control" id="titolo" placeholder="Inserisci titolo">
