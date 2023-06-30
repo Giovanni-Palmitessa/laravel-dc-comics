@@ -54,7 +54,7 @@
             <input type="text" 
                    class="form-control @error('price') is-invalid @enderror" 
                    id="prezzo" 
-                   placeholder="Inserisci prezzo"
+                   placeholder="Inserisci prezzo nel formato '$ **.**'"
                    name="price"
                    value="{{ old('price') }}"
                 >
