@@ -97,7 +97,7 @@
         <div class="mb-3">
             <label for="tipo" class="form-label">Tipo</label>
             <input type="text" 
-                   class="form-control" 
+                   class="form-control  @error('type') is-invalid @enderror" 
                    id="tipo" 
                    placeholder="Inserisci tipo" 
                    name="type"
