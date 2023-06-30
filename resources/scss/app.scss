@@ -49,12 +49,13 @@ a {
     }
   }
 
+//   MAIN
+
   main {
     background-color: black;
     padding-bottom: 1rem;
     .jumbotron {
       height: 60vh;
-      width: 100vw;
       background-image: url(../img/jumbotron.jpg);
       background-size: cover;
     }
@@ -81,8 +82,7 @@ a {
   }
 
   .card {
-    width: calc((100% - 5rem) / 6);
-    background-color: lightslategray;
+    width: calc((100% - 3rem) / 4);
   
     h6 {
       color: white;
