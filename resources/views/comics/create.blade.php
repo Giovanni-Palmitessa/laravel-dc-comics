@@ -18,6 +18,7 @@
             </div>
         </div>
 
+
         <div class="mb-3">
             <label for="descrizione" class="form-label">Descrizione</label>
             <input type="text" 
@@ -31,9 +32,20 @@
                  @error('description') {{ $message }} @enderror
             </div>
         </div>
+
+
         <div class="mb-3">
             <label for="url-image" class="form-label">URL Immagine</label>
-            <input type="text" class="form-control" id="url-image" placeholder="Inserisci l'URL dell'immagine" name="thumb">
+            <input type="text" 
+                   class="form-control @error('thumb') is-invalid @enderror" 
+                   id="url-image" 
+                   placeholder="Inserisci l'URL dell'immagine" 
+                   name="thumb"
+                   value="{{ old('thumb') }}"
+                >
+            <div class="invalid-feedback">
+                @error('thumb') {{ $message }} @enderror
+            </div>
         </div>
         <div class="mb-3">
             <label for="prezzo" class="form-label">Prezzo</label>
