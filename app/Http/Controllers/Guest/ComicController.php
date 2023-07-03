@@ -45,7 +45,7 @@ class ComicController extends Controller
             [
                 'title'           => 'required|max:60',
                 'description'        => 'required|string|min:5|max:5000',
-                'thumb'          => 'required|url|max:200',
+                'thumb'          => 'required|url|max:400',
                 'price'       => 'required|string',
                 'series'          => 'required|string',
                 'sale_date'   => 'required|string',
@@ -116,19 +116,46 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'title'           => 'required|max:60',
+                'description'        => 'required|string|min:5|max:5000',
+                'thumb'          => 'required|url|max:400',
+                'price'       => 'required|string',
+                'series'          => 'required|string',
+                'sale_date'   => 'required|string',
+                'type'   => 'required|string',
+            ],
 
-        // validare i dati
-        $data = $request->all();
+            [
+                'required' => 'Il campo :attribute è richiesto!',
+                'title.max' => 'Il campo :attribute deve essere al massimo di :max caratteri.',
+                'description.max' => 'Il campo :attribute deve essere al massimo di :max caratteri.',
+                'description.min' => 'Il campo :attribute deve essere minimo :min caratteri.',
+                'thumb.url'    => 'Il campo :attribute deve essere un URL valido.',
+                'thumb.max' => 'Il campo :attribute deve essere al massimo di :max caratteri.',
+            ]
+        );
 
-        // aggiornare i dati nel db
-        $comic->title = $data['title'];
-        $comic->description = $data['description'];
-        $comic->thumb = $data['thumb'];
-        $comic->price = $data['price'];
-        $comic->series = $data['series'];
-        $comic->sale_date = $data['sale_date'];
-        $comic->type = $data['type'];
-        $comic->update();
+        if ($validator->fails()) {
+            return redirect('comics/create')
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            // validare i dati
+            $data = $request->all();
+
+            // aggiornare i dati nel db
+            $comic->title = $data['title'];
+            $comic->description = $data['description'];
+            $comic->thumb = $data['thumb'];
+            $comic->price = $data['price'];
+            $comic->series = $data['series'];
+            $comic->sale_date = $data['sale_date'];
+            $comic->type = $data['type'];
+            $comic->update();
+        }
 
         return to_route('comics.show', ['comic' => $comic->id]);
     }
