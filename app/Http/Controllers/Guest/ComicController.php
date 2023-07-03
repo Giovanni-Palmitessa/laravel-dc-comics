@@ -172,8 +172,10 @@ class ComicController extends Controller
         return to_route('comics.index')->with('delete_success', "Il fumetto -{$comic->title} - è stato eliminato");
     }
 
-    public function restore(Comic $comic)
+    public function restore($id)
     {
-        return 'sei in restore';
+        $comic = Comic::withTrashed('id', $id)->restore();
+
+        return redirect()->route('comics.index')->with('delete_success', "Il fumetto -{$comic->title} - è stato ripristinato");
     }
 }

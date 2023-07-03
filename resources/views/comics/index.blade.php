@@ -4,15 +4,25 @@
     <div class="card-container">
         <div class="jumbotron"></div>
             <div class="container">
+
               @if (session('delete_success'))
+              @php $comic = (session('delete_success'))@endphp
                 <div class="alert alert-danger">
                     {{ session('delete_success') }}
-                    <form action="{{route('comics.restore', ['comic' => $comic->id])}}" method="post">
+                    <form action="{{route('comics.restore', ['comic' => $comic])}}" method="POST">
                       @csrf
                       <button class="btn btn-warning">Ripristina</button>
                     </form>
                 </div>
               @endif
+
+              @if (session('restore_success'))
+              @php $comic = (session('restore_success'))@endphp
+                <div class="alert alert-success">
+                    {{ session('restore_success') }}
+                </div>
+              @endif
+
               <div class="main-content">
                 <button type="button" class="btn btn-primary mt-4"><a href="{{route('comics.create')}}" class="text-center text-white">Inserisci Nuovo fumetto</a></button>
                 <div class="comics mb-3">
