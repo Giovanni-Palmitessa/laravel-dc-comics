@@ -20,3 +20,5 @@ Route::get('/', [PageController::class, 'homepage'])->name('homepage');
 Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
 
 Route::resource('comics', ComicController::class);
+// per il restore del comic dopo l'eliminazione soft
+Route::post('/comics/{comic}/restore', [ComicController::class, 'restore'])->name('comics.restore');
