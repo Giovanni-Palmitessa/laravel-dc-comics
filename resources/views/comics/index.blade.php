@@ -1,15 +1,14 @@
 @extends('layouts.base')
 
 @section('contents')
-
-    @if (session('delete_success'))
-        <div class="alert alert-danger">
-            {{ session('delete_success') }}
-        </div>
-    @endif
     <div class="card-container">
         <div class="jumbotron"></div>
             <div class="container">
+              @if (session('delete_success'))
+                <div class="alert alert-danger">
+                    {{ session('delete_success') }}
+                </div>
+              @endif
               <div class="main-content">
                 <button type="button" class="btn btn-primary mt-4"><a href="{{route('comics.create')}}" class="text-center text-white">Inserisci Nuovo fumetto</a></button>
                 <div class="comics mb-3">
