@@ -1,6 +1,12 @@
 @extends('layouts.base')
 
 @section('contents')
+
+    @if (session('delete_success'))
+        <div class="alert alert-danger">
+            {{ session('delete_success') }}
+        </div>
+    @endif
     <div class="card-container">
         <div class="jumbotron"></div>
             <div class="container">
