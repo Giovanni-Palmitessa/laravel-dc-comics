@@ -174,5 +174,6 @@ class ComicController extends Controller
 
     public function restore(Comic $comic)
     {
+        return 'sei in restore';
     }
 }
