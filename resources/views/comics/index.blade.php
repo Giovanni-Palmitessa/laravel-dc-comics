@@ -20,7 +20,11 @@
                       <div class="card-body">
                         <a href="{{ route('comics.show', ['comic' => $comic->id]) }}" class="card-link">Informazioni</a>
                         <a href="{{route('comics.edit', ['comic' => $comic->id])}}" class="card-link">Modifica</a>
-                        <a href="#" class="card-link">Elimina</a>
+                        <form action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="POST">
+                          @csrf
+                          @method('delete')
+                          <button class="btn btn-danger">Elimina</button>
+                        </form>
                       </div>
                   </div>
                   @endforeach
