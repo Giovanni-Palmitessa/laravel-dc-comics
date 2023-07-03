@@ -166,16 +166,21 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comic $comic)
+    public function destroy($id)
     {
+        $comic = Comic::findOrFail($id);
+
         $comic->delete();
-        return to_route('comics.index')->with('delete_success', "Il fumetto -{$comic->title} - è stato eliminato");
+
+        return to_route('comics.index')->with('delete_success', $comic);
     }
 
     public function restore($id)
     {
-        $comic = Comic::withTrashed('id', $id)->restore();
+        Comic::withTrashed()->where('id', $id)->restore();
 
-        return redirect()->route('comics.index')->with('delete_success', "Il fumetto -{$comic->title} - è stato ripristinato");
+        $comic = Comic::find($id);
+
+        return redirect()->route('comics.index')->with('restore_success', $comic);
     }
 }

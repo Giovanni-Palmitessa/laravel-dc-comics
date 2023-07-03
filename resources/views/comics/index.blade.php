@@ -6,10 +6,10 @@
             <div class="container">
 
               @if (session('delete_success'))
-              @php $comic = (session('delete_success'))@endphp
+              @php $comic = session('delete_success')@endphp
                 <div class="alert alert-danger">
-                    {{ session('delete_success') }}
-                    <form action="{{route('comics.restore', ['comic' => $comic])}}" method="POST">
+                  Il fumetto "{{$comic->title}}" è stato eliminato.
+                    <form action="{{route('comics.restore', ['comic' => $comic->id])}}" method="POST">
                       @csrf
                       <button class="btn btn-warning">Ripristina</button>
                     </form>
@@ -17,9 +17,9 @@
               @endif
 
               @if (session('restore_success'))
-              @php $comic = (session('restore_success'))@endphp
+              @php $comic = session('restore_success')@endphp
                 <div class="alert alert-success">
-                    {{ session('restore_success') }}
+                  Il fumetto "{{$comic->title}}" è stato ripristinato.
                 </div>
               @endif
 
@@ -39,6 +39,7 @@
                       <div class="card-body">
                         <a href="{{ route('comics.show', ['comic' => $comic->id]) }}" class="card-link">Informazioni</a>
                         <a href="{{route('comics.edit', ['comic' => $comic->id])}}" class="card-link">Modifica</a>
+
                         <form action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="POST">
                           @csrf
                           @method('delete')
