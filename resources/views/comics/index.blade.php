@@ -7,6 +7,10 @@
               @if (session('delete_success'))
                 <div class="alert alert-danger">
                     {{ session('delete_success') }}
+                    <form action="{{route('comics.restore', ['comic' => $comic->id])}}" method="post">
+                      @csrf
+                      <button class="btn btn-warning">Ripristina</button>
+                    </form>
                 </div>
               @endif
               <div class="main-content">
