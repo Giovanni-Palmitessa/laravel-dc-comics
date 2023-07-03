@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('series', 100);
             $table->char('sale_date', 10);
             $table->string('type', 20);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
